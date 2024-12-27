@@ -1,0 +1,42 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.out
+
+# Test binary
+*.test
+
+# Output of the build
+/build/
+
+# Dependency directories (if not vendored)
+vendor/
+
+# GoLand project files
+.idea/
+
+# Log and debug files
+*.log
+
+# Go coverage files
+*.cover
+coverage.out
+
+# IDE configuration files
+*.iml
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Go module files (lock file can be omitted if it is managed in CI/CD)
+go.sum
+
+# Temporary files
+*.tmp
+*.temp
+
+# Cache directories
+*.cache/
