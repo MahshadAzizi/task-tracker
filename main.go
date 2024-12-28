@@ -12,20 +12,17 @@ import (
 func main() {
 	fmt.Println("Welcome to the Task Tracker Project!")
 
-	// Load tasks from file on startup
 	if err := task.LoadTasksFromFile(); err != nil {
 		log.Printf("Error loading tasks: %v\n", err)
 		return
 	}
 
-	// Save tasks on program exit
 	defer func() {
 		if err := task.SaveTasksToFile(); err != nil {
 			log.Printf("Error saving tasks: %v\n", err)
 		}
 	}()
 
-	// Command handlers map
 	commands := map[string]func([]string){
 		"add":              task.HandleAdd,
 		"update":           task.HandleUpdate,
@@ -33,10 +30,11 @@ func main() {
 		"delete":           task.HandleDelete,
 		"mark-in-progress": task.HandleMarkInProgress,
 		"mark-done":        task.HandleMarkDone,
+		"help":             task.HandleHelp,
 	}
 
 	for {
-		fmt.Println("Enter a command with arguments:")
+		fmt.Println("Enter a command with arguments (type 'help' for list of commands):")
 		command, args := getUserInput()
 		if command == "" {
 			fmt.Println("No command entered. Please try again.")

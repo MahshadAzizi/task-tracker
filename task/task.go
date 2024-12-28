@@ -163,3 +163,14 @@ func printTask(task Task) {
 		task.CreatedAt.Format("2006-01-02 15:04:05"),
 		task.UpdatedAt.Format("2006-01-02 15:04:05"))
 }
+
+func HandleHelp(args []string) {
+	fmt.Println("Available commands:")
+	fmt.Println("  add <description>             - Add a new task")
+	fmt.Println("  update <id> <description>     - Update an existing task")
+	fmt.Println("  list [status]                 - List tasks (optional filter by status: todo, in-progress, done)")
+	fmt.Println("  delete <id>                   - Delete a task by ID")
+	fmt.Println("  mark-in-progress <id>         - Mark a task as in-progress")
+	fmt.Println("  mark-done <id>                - Mark a task as done")
+	fmt.Println("  help                          - Show this help message")
+}
